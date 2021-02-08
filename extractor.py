@@ -33,7 +33,7 @@ class Handler(FileSystemEventHandler):
                 print ('Extracting from resolver:' + resolver)
                 self.handle_certificates(data[resolver], resolver)
     
-    def handle_certificates(self, data, resolver):
+    def handle_certificates(self, data, resolver=False):
         # Determine ACME version
         try:
             acme_version = 2 if 'acme-v02' in data['Account']['Registration']['uri'] else 1
